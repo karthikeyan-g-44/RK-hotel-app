@@ -3,25 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RK Hotel</title>
+  <title>RK Hotel | Luxury Stays & Modern Elegance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- Ambient Animated Light Orbs -->
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="orb orb-gold"></div>
+    <div class="orb orb-purple"></div>
+    <div class="orb orb-cyan"></div>
+  </div>
+
+  <!-- Moving Luxury Marquee Ticker -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="star-icon">★</span> Award-Winning Luxury Destination 2026
+        <span class="bullet">•</span> Rooftop Infinity Pool & Sky Lounge
+        <span class="bullet">•</span> Michelin-Starred Culinary Dining
+        <span class="bullet">•</span> 24/7 Bespoke VIP Concierge
+        <span class="bullet">•</span> Rejuvenating Royal Wellness Spa
+        <span class="bullet">•</span> Panoramic Ocean & Skyline Views
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span class="star-icon">★</span> Award-Winning Luxury Destination 2026
+        <span class="bullet">•</span> Rooftop Infinity Pool & Sky Lounge
+        <span class="bullet">•</span> Michelin-Starred Culinary Dining
+        <span class="bullet">•</span> 24/7 Bespoke VIP Concierge
+        <span class="bullet">•</span> Rejuvenating Royal Wellness Spa
+        <span class="bullet">•</span> Panoramic Ocean & Skyline Views
+      </div>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="site-inner">
-      <div class="brand">
-        <div class="brand-mark">RK</div>
+      <a href="#home" class="brand">
+        <div class="brand-mark">
+          <span>RK</span>
+          <div class="brand-pulse"></div>
+        </div>
         <div>
           <h1>RK Hotel</h1>
           <p>Luxury stays with modern elegance</p>
         </div>
-      </div>
+      </a>
       <nav class="nav" id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#rooms">Rooms</a>
-        <a href="#amenities">Amenities</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#rooms" class="nav-link">Rooms</a>
+        <a href="#amenities" class="nav-link">Amenities</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#booking" class="nav-btn-book">Reserve Suite</a>
       </nav>
       <button class="menu-toggle" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -30,183 +69,439 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section id="home" class="hero-section">
       <div class="hero-copy">
-        <span class="eyebrow">Welcome to elegance</span>
-        <h2>Discover your unforgettable stay</h2>
-        <p>Experience rich design, warm hospitality, and premium services in the heart of the city.</p>
+        <div class="eyebrow-badge">
+          <span class="sparkle">✨</span>
+          <span>Welcome to Unrivaled Elegance</span>
+        </div>
+        <h2 class="hero-title">Discover Your <span class="gradient-text">Extraordinary</span> Sanctuary</h2>
+        <p class="hero-desc">Experience rich design, Michelin-inspired gastronomy, and intuitive luxury service curated in the vibrant heart of the city.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#booking">Book Now</a>
-          <a class="btn btn-secondary" href="#rooms">View Rooms</a>
+          <a class="btn btn-primary glow-button" href="#booking">
+            <span>Book Your Stay</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="#rooms">
+            <span>Explore Rooms</span>
+          </a>
+        </div>
+        
+        <!-- Live Floating Features Bar -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="150">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Luxury Suites</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="49">0</span><span class="stat-dot">.</span><span class="stat-dec">9</span><span class="stat-star">★</span>
+            <span class="stat-label">Guest Rating</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="24">0</span><span class="stat-plus">/7</span>
+            <span class="stat-label">VIP Butler Service</span>
+          </div>
         </div>
       </div>
-      <div class="hero-highlights">
-        <div class="highlight-card glass">
-          <h3>5-Star Dining</h3>
-          <p>Signature cuisine, rooftop cocktails, and bespoke private dining.</p>
+
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <!-- Floating Highlight Card 1 -->
+          <div class="highlight-card glass float-card float-slow">
+            <div class="card-icon">🍸</div>
+            <div class="card-text">
+              <h3>Rooftop Sky Lounge</h3>
+              <p>Signature cocktails with 360° city horizon views.</p>
+            </div>
+            <span class="card-badge">Open Now</span>
+          </div>
+          
+          <!-- Floating Highlight Card 2 -->
+          <div class="highlight-card glass float-card float-mid">
+            <div class="card-icon">🌿</div>
+            <div class="card-text">
+              <h3>Royal Wellness Spa</h3>
+              <p>Aromatherapy, heated mineral pools & sauna.</p>
+            </div>
+            <span class="card-badge">Featured</span>
+          </div>
+
+          <!-- Floating Highlight Card 3 -->
+          <div class="highlight-card glass float-card float-fast">
+            <div class="card-icon">🍽️</div>
+            <div class="card-text">
+              <h3>5-Star Haute Cuisine</h3>
+              <p>Curated dining by award-winning master chefs.</p>
+            </div>
+            <span class="card-badge">Michelin Guide</span>
+          </div>
         </div>
-        <div class="highlight-card glass">
-          <h3>Wellness Spa</h3>
-          <p>Rejuvenating treatments, sauna, and guided yoga sessions.</p>
-        </div>
-        <div class="highlight-card glass">
-          <h3>Executive Suites</h3>
-          <p>Spacious rooms with panoramic views and luxury amenities.</p>
+
+        <!-- Floating Rating Bubble -->
+        <div class="floating-badge hero-float-badge">
+          <div class="badge-stars">★★★★★</div>
+          <div class="badge-text">
+            <strong>4.9 / 5.0 Rating</strong>
+            <span>Based on 1,850+ reviews</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- LIVE EXPERIENCE STRIP -->
+    <section id="experience" class="section experience-strip">
+      <div class="moving-badges-wrapper">
+        <div class="moving-badge"><span class="icon">✨</span> Complimentary Valet & Limousine</div>
+        <div class="moving-badge"><span class="icon">🌊</span> Heated Infinity Horizon Pool</div>
+        <div class="moving-badge"><span class="icon">🍷</span> Private Wine Cellar Tastings</div>
+        <div class="moving-badge"><span class="icon">💎</span> High-Speed Fiber WiFi & Smart Suites</div>
+        <div class="moving-badge"><span class="icon">🛎️</span> Personal 24-Hour Butler</div>
+      </div>
+    </section>
+
+    <!-- AMENITIES SECTION -->
     <section id="amenities" class="section section-alt">
-      <div class="section-header">
-        <span class="eyebrow">Amenities</span>
-        <h2>Everything you need for a refined stay</h2>
+      <div class="section-header text-center">
+        <span class="eyebrow">Curated Comforts</span>
+        <h2>World-Class Amenities Designed for You</h2>
+        <p class="section-subtitle">Indulge in an ecosystem of leisure, tranquility, and tailored hospitality.</p>
       </div>
       <div class="features-grid">
-        <article class="feature-card">
-          <h3>Infinity Pool</h3>
-          <p>Relax in our rooftop pool with breathtaking skyline views.</p>
+        <article class="feature-card glass-hover interactive-tilt">
+          <div class="feature-icon-wrapper icon-aqua">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M2 16c2 1 4 1 6 0s4-1 6 0 4 1 6 0M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0M12 2v6M8 4l4-2 4 2"/></svg>
+          </div>
+          <h3>Skyline Infinity Pool</h3>
+          <p>Unwind in our climate-controlled rooftop pool with private cabanas and day-to-night cocktail service.</p>
+          <div class="card-glow-line"></div>
         </article>
-        <article class="feature-card">
-          <h3>Concierge Services</h3>
-          <p>Personalized planning, city tours, and event support.</p>
+        <article class="feature-card glass-hover interactive-tilt">
+          <div class="feature-icon-wrapper icon-gold">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>24/7 Bespoke Concierge</h3>
+          <p>Dedicated personal planning, private jet charters, yacht bookings, and exclusive city access.</p>
+          <div class="card-glow-line"></div>
         </article>
-        <article class="feature-card">
-          <h3>Fitness Studio</h3>
-          <p>State-of-the-art gym equipment and wellness coaching.</p>
+        <article class="feature-card glass-hover interactive-tilt">
+          <div class="feature-icon-wrapper icon-purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h12M6 6h12M4 12h16M2 9v6M22 9v6"/></svg>
+          </div>
+          <h3>State-of-Art Fitness Studio</h3>
+          <p>Technogym biometric equipment, yoga terraces, and certified personal performance coaches.</p>
+          <div class="card-glow-line"></div>
         </article>
-        <article class="feature-card">
-          <h3>Meeting Spaces</h3>
-          <p>Flexible boardrooms and event venues with full AV support.</p>
+        <article class="feature-card glass-hover interactive-tilt">
+          <div class="feature-icon-wrapper icon-emerald">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Executive Boardrooms & Events</h3>
+          <p>Acoustically tuned ballrooms and multimedia conference suites equipped with 4K broadcast systems.</p>
+          <div class="card-glow-line"></div>
         </article>
       </div>
     </section>
 
+    <!-- ROOMS & SUITES SECTION -->
     <section id="rooms" class="section rooms-section">
       <div class="section-header">
-        <span class="eyebrow">Rooms & Suites</span>
-        <h2>Curated spaces for comfort and prestige</h2>
+        <div class="header-left">
+          <span class="eyebrow">Accommodations</span>
+          <h2>Exquisite Rooms & Royal Suites</h2>
+        </div>
+        <p class="section-subtitle">Every space is designed with Italian marble, custom king-size beds, and soundproof luxury acoustics.</p>
       </div>
       <div class="room-grid">
-        <article class="room-card">
-          <div class="room-media room-luxury"></div>
+        <article class="room-card interactive-tilt">
+          <div class="room-media room-luxury">
+            <div class="room-overlay">
+              <span class="room-tag">Most Popular</span>
+            </div>
+          </div>
           <div class="room-content">
-            <h3>Royal Suite</h3>
-            <p>Executive seating, champagne minibar, private balcony, and city views.</p>
-            <span class="room-price">From $420/night</span>
+            <div class="room-rating">★★★★★ <span>(5.0)</span></div>
+            <h3>The Royal Penthouse Suite</h3>
+            <p>Panoramic 180° views, private whirlpool terrace, champagne bar, and complimentary butler.</p>
+            <div class="room-perks">
+              <span>95 m²</span> • <span>King Bed</span> • <span>City View</span>
+            </div>
+            <div class="room-bottom">
+              <div class="price-wrap">
+                <span class="from">From</span>
+                <span class="room-price">$420</span>
+                <span class="per-night">/night</span>
+              </div>
+              <a href="#booking" class="btn btn-sm btn-primary" onclick="selectRoom('Royal Penthouse Suite')">Book Suite</a>
+            </div>
           </div>
         </article>
-        <article class="room-card">
-          <div class="room-media room-deluxe"></div>
+
+        <article class="room-card interactive-tilt">
+          <div class="room-media room-deluxe">
+            <div class="room-overlay">
+              <span class="room-tag tag-deluxe">Executive</span>
+            </div>
+          </div>
           <div class="room-content">
-            <h3>Deluxe Room</h3>
-            <p>Luxurious bedding, marble bath, and curated amenities.</p>
-            <span class="room-price">From $320/night</span>
+            <div class="room-rating">★★★★★ <span>(4.9)</span></div>
+            <h3>Grand Deluxe Haven</h3>
+            <p>Plush Egyptian cotton bedding, marble rain shower, espresso lounge, and smart room automation.</p>
+            <div class="room-perks">
+              <span>65 m²</span> • <span>Queen Bed</span> • <span>Garden View</span>
+            </div>
+            <div class="room-bottom">
+              <div class="price-wrap">
+                <span class="from">From</span>
+                <span class="room-price">$320</span>
+                <span class="per-night">/night</span>
+              </div>
+              <a href="#booking" class="btn btn-sm btn-primary" onclick="selectRoom('Grand Deluxe Haven')">Book Suite</a>
+            </div>
           </div>
         </article>
-        <article class="room-card">
-          <div class="room-media room-premium"></div>
+
+        <article class="room-card interactive-tilt">
+          <div class="room-media room-premium">
+            <div class="room-overlay">
+              <span class="room-tag tag-premium">Spacious</span>
+            </div>
+          </div>
           <div class="room-content">
-            <h3>Premium Twin</h3>
-            <p>Ideal for friends or family with ample space and rich decor.</p>
-            <span class="room-price">From $280/night</span>
+            <div class="room-rating">★★★★★ <span>(4.8)</span></div>
+            <h3>Premium Twin Sanctuary</h3>
+            <p>Designed for families or travel partners with dual queen beds, living parlor, and deep soak tub.</p>
+            <div class="room-perks">
+              <span>55 m²</span> • <span>2 Queen Beds</span> • <span>Sunset View</span>
+            </div>
+            <div class="room-bottom">
+              <div class="price-wrap">
+                <span class="from">From</span>
+                <span class="room-price">$280</span>
+                <span class="per-night">/night</span>
+              </div>
+              <a href="#booking" class="btn btn-sm btn-primary" onclick="selectRoom('Premium Twin Sanctuary')">Book Suite</a>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
+    <!-- BOOKING SECTION -->
     <section class="section booking-section" id="booking">
-      <div class="section-header">
-        <span class="eyebrow">Reserve</span>
-        <h2>Secure your preferred stay in seconds</h2>
+      <div class="booking-intro">
+        <span class="eyebrow">Instant Reservation</span>
+        <h2>Reserve Your Unforgettable Experience</h2>
+        <p>Book directly through our official portal for complimentary breakfast, high-floor room priority, and flexible cancellation up to 24h prior.</p>
+        
+        <div class="guarantee-list">
+          <div class="guarantee-item">
+            <div class="check-icon">✓</div>
+            <span>Best Rate Guaranteed with direct booking</span>
+          </div>
+          <div class="guarantee-item">
+            <div class="check-icon">✓</div>
+            <span>Complimentary signature welcome champagne</span>
+          </div>
+          <div class="guarantee-item">
+            <div class="check-icon">✓</div>
+            <span>Free high-speed WiFi and valet parking</span>
+          </div>
+        </div>
       </div>
-      <form class="booking-form" id="bookingForm">
-        <div class="form-row">
-          <label for="name">Full name</label>
-          <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+
+      <form class="booking-form glass" id="bookingForm">
+        <div class="form-header">
+          <h3>Check Availability & Rates</h3>
+          <p>Instant confirmation with zero hidden fees</p>
         </div>
+
         <div class="form-row">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com" />
-        </div>
-        <div class="form-row split">
-          <div>
-            <label for="checkin">Check-in</label>
-            <input type="date" id="checkin" name="checkin" required />
-          </div>
-          <div>
-            <label for="checkout">Check-out</label>
-            <input type="date" id="checkout" name="checkout" required />
+          <label for="name">Full Name</label>
+          <div class="input-wrapper">
+            <input type="text" id="name" name="name" required placeholder="e.g. Eleanor Vance" />
           </div>
         </div>
+
+        <div class="form-row">
+          <label for="email">Email Address</label>
+          <div class="input-wrapper">
+            <input type="email" id="email" name="email" required placeholder="e.g. eleanor@luxury.com" />
+          </div>
+        </div>
+
         <div class="form-row split">
           <div>
-            <label for="guests">Guests</label>
+            <label for="checkin">Check-in Date</label>
+            <div class="input-wrapper">
+              <input type="date" id="checkin" name="checkin" required />
+            </div>
+          </div>
+          <div>
+            <label for="checkout">Check-out Date</label>
+            <div class="input-wrapper">
+              <input type="date" id="checkout" name="checkout" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row split">
+          <div>
+            <label for="guests">Guests & Rooms</label>
             <select id="guests" name="guests">
-              <option>1 guest</option>
-              <option>2 guests</option>
-              <option>3 guests</option>
-              <option>4 guests</option>
+              <option value="1 Guest">1 Guest</option>
+              <option value="2 Guests" selected>2 Guests (1 Room)</option>
+              <option value="3 Guests">3 Guests</option>
+              <option value="4+ Guests">4+ Guests (Family Suite)</option>
             </select>
           </div>
           <div>
-            <label for="roomType">Room type</label>
+            <label for="roomType">Select Suite</label>
             <select id="roomType" name="roomType">
-              <option>Royal Suite</option>
-              <option>Deluxe Room</option>
-              <option>Premium Twin</option>
+              <option value="Royal Penthouse Suite">Royal Penthouse Suite ($420)</option>
+              <option value="Grand Deluxe Haven">Grand Deluxe Haven ($320)</option>
+              <option value="Premium Twin Sanctuary">Premium Twin Sanctuary ($280)</option>
             </select>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Confirm Booking</button>
-        <p class="form-note">We will send a confirmation email with your itinerary and arrival details.</p>
+
+        <button class="btn btn-primary btn-submit-booking" type="submit" id="submitBookingBtn">
+          <span class="btn-text">Confirm Booking Now</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+        <p class="form-note">🔒 256-bit SSL Encrypted • Instant Confirmation Email</p>
       </form>
     </section>
 
+    <!-- GALLERY SECTION -->
     <section id="gallery" class="section gallery-section">
-      <div class="section-header">
-        <span class="eyebrow">Gallery</span>
-        <h2>Timeless design captured in every corner</h2>
+      <div class="section-header text-center">
+        <span class="eyebrow">Visual Tour</span>
+        <h2>Moments of Pure Refinement</h2>
+        <p class="section-subtitle">Take a glimpse inside our serene suites, crystal waters, and culinary artistry.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item gallery-1"></div>
-        <div class="gallery-item gallery-2"></div>
-        <div class="gallery-item gallery-3"></div>
-        <div class="gallery-item gallery-4"></div>
+        <div class="gallery-item gallery-1 interactive-tilt">
+          <div class="gallery-caption">
+            <h4>Private Rooftop Oasis</h4>
+            <p>Heated Infinity Edge</p>
+          </div>
+        </div>
+        <div class="gallery-item gallery-2 interactive-tilt">
+          <div class="gallery-caption">
+            <h4>Grand Presidential Suite</h4>
+            <p>Italian Velvet & Marble</p>
+          </div>
+        </div>
+        <div class="gallery-item gallery-3 interactive-tilt">
+          <div class="gallery-caption">
+            <h4>The Amber Lounge</h4>
+            <p>Fine Rare Spirits & Jazz</p>
+          </div>
+        </div>
+        <div class="gallery-item gallery-4 interactive-tilt">
+          <div class="gallery-caption">
+            <h4>Tranquil Garden Atrium</h4>
+            <p>Morning Tea & Botanicals</p>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
     <section class="section testimonials-section">
-      <div class="section-header">
-        <span class="eyebrow">Testimonials</span>
-        <h2>What our guests say</h2>
+      <div class="section-header text-center">
+        <span class="eyebrow">Guest Stories</span>
+        <h2>Praised by World Travelers</h2>
       </div>
       <div class="testimonial-grid">
-        <article class="testimonial-card">
-          <p>"A flawless stay with service that felt personal from start to finish. The suite was incredible."</p>
-          <span>— Aisha M.</span>
+        <article class="testimonial-card glass interactive-tilt">
+          <div class="stars">★★★★★</div>
+          <p>"A breathtaking sanctuary. The penthouse balcony view at dusk is completely hypnotic, and the concierge booked us front-row theater tickets within minutes. Absolute perfection."</p>
+          <div class="guest-info">
+            <div class="guest-avatar">AM</div>
+            <div>
+              <strong>Aisha Mansoor</strong>
+              <span>London, UK • Verified VIP Stay</span>
+            </div>
+          </div>
         </article>
-        <article class="testimonial-card">
-          <p>"The rooftop lounge and spa made our anniversary unforgettable. Every detail was thoughtful."</p>
-          <span>— Marco L.</span>
+        <article class="testimonial-card glass interactive-tilt">
+          <div class="stars">★★★★★</div>
+          <p>"From the moment our limousine pulled up to the private dinner on the rooftop, RK Hotel redefined luxury for my family. The staff attends to every unspoken desire."</p>
+          <div class="guest-info">
+            <div class="guest-avatar">ML</div>
+            <div>
+              <strong>Marco Laurent</strong>
+              <span>Geneva, Switzerland • Verified VIP Stay</span>
+            </div>
+          </div>
         </article>
       </div>
     </section>
   </main>
 
+  <!-- CONFIRMATION MODAL -->
+  <div class="modal-backdrop" id="bookingModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-icon-wrap">
+        <div class="checkmark-circle">
+          <svg viewBox="0 0 52 52">
+            <circle class="checkmark-circle-bg" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+      </div>
+      <h3>Reservation Confirmed!</h3>
+      <p class="modal-sub">Thank you, <strong id="modalGuestName">Guest</strong>. Your luxury stay has been reserved.</p>
+      
+      <div class="modal-details">
+        <div class="modal-detail-row">
+          <span>Suite</span>
+          <strong id="modalRoomType">Royal Suite</strong>
+        </div>
+        <div class="modal-detail-row">
+          <span>Dates</span>
+          <strong id="modalDates">Oct 10 - Oct 14</strong>
+        </div>
+        <div class="modal-detail-row">
+          <span>Guests</span>
+          <strong id="modalGuests">2 Guests</strong>
+        </div>
+      </div>
+
+      <p class="modal-note">A confirmation voucher with your itinerary and arrival concierge details has been sent to your email.</p>
+      
+      <button class="btn btn-primary modal-close-btn" id="modalCloseBtn">Done & Continue</button>
+    </div>
+  </div>
+
   <footer id="contact" class="site-footer">
     <div class="site-inner">
-      <div>
-        <h2>RK Hotel</h2>
-        <p>123 Grand Avenue, City Center • +1 800 123 4567 • hello@rkhotel.com</p>
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-mark">RK</div>
+          <div>
+            <h2>RK Hotel</h2>
+            <p>123 Grand Avenue, City Center • +1 800 123 4567 • reservations@rkhotel.com</p>
+          </div>
+        </div>
       </div>
       <div class="footer-links">
-        <a href="#home">Back to top</a>
-        <a href="#rooms">Rooms</a>
-        <a href="#booking">Booking</a>
+        <a href="#home">Back to Top ↑</a>
+        <a href="#rooms">Suites</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#booking">Booking Portal</a>
       </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 RK Hotel & Resorts International. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
